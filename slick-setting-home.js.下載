@@ -1,0 +1,29 @@
+$(function(){
+  $('.home-slide').slick({
+    dots: true,
+    infinite: true,//無限ループ
+    autoplay: true,//オートプレイ
+    autoplaySpeed: 2000,//オートプレイ切り替わり時間=ms
+    speed: 500,//スライドにかかる時間=ms
+    fade: true,//フェード切り替え
+    swipe: true,//タッチスワイプ不可
+    touchMove: true,//タッチスライド可
+    cssEase: 'linear',
+
+    responsive: [
+      {
+        breakpoint: 959,
+        settings: {
+          arrows: false//タブレット矢印なし
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          arrows: false//モバイル矢印なし
+        }
+      }
+    ]
+
+  });
+});

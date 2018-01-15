@@ -1,0 +1,13 @@
+$(document).ready(function(){
+  $('.menu-jp').slicknav({
+  label: '',
+  brand: '<a href="/"><img src="/images/common/nav-symbol-main-sp.png" alt="ウサギノネドコ"></a>'
+});
+});
+
+$(document).ready(function(){
+  $('.menu-en').slicknav({
+  label: '',
+  brand: '<a href="/en/"><img src="/images/common/nav-symbol-main-sp-en.png" alt="ウサギノネドコ"></a>'
+});
+});

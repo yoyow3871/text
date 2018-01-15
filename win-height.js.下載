@@ -1,0 +1,29 @@
+function adjustMainContentArea(){
+    var menuHeight = $(".main-nav").outerHeight() + 40,
+        contentHeight = $(".contents-wrapper").outerHeight() +40,
+        winHeight = $(window).height(),
+        footerHeight = $("footer").outerHeight() + 80,
+        hsize;
+
+    if( $(".brand-index-bg").length === 1 ) {
+        hsize = Math.max( menuHeight, contentHeight, winHeight );
+    }
+    else {
+        hsize = Math.max( menuHeight, contentHeight, winHeight - footerHeight );
+    }
+
+    console.log(hsize, menuHeight,contentHeight,winHeight,footerHeight);
+//    console.log($(".brand-image").length)
+
+     $("#all-wrapper").css("height", hsize + "px");
+}
+
+$(window).on("load",function () {
+    adjustMainContentArea();
+});
+$(window).resize(function () {
+    adjustMainContentArea();
+});
+
+
+

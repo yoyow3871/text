@@ -1,0 +1,44 @@
+/*
+$(function(){
+    $(".accordion-btn").on("click", function() {
+        $(this).next().slideToggle();
+        $(this).toggleClass("toggle-active");
+    });
+
+
+    $(window).on("load",function(){
+        //windowの幅をxに代入
+        var x = $(window).width();
+        //windowの分岐幅をyに代入
+        var y = 959;
+        if (x <= y) {
+            $('.sp-accordion').addClass('accordion-btn');
+        } else {
+            $('.sp-accordion').removeClass('accordion-btn');
+        }
+    });
+
+
+});
+*/
+
+
+jQuery(document).ready(function($) {
+    //PC環境の場合
+    if (window.matchMedia( '(min-width: 960px)' ).matches) {　//切り替える画面サイズ
+
+        $(".accordion-btn").on("click", function() {
+            $(this).next().slideToggle();
+            $(this).toggleClass("toggle-active");
+        });
+
+    //モバイル環境の場合
+    } else {
+
+        $(".foot-accordion-btn").on("click", function() {
+            $(this).next().slideToggle();
+            $(this).toggleClass("toggle-active");
+        });
+
+    };
+});

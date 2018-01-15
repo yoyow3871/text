@@ -1,0 +1,46 @@
+$(function() {
+    var timer;
+    var pageid=document.getElementsByTagName('body')[0].id
+//    console.log(pageid)
+
+$.fn.matchHeight._afterUpdate = function(event, groups) {
+    adjustMainContentArea()
+}
+
+    switch(pageid){
+
+        case 'home':
+            $('.item-list .item, .news-list .post').matchHeight();
+            break;
+
+        case 'sola-products':
+            $('.item').matchHeight();
+            $('.item img').on('load',function(){
+                clearTimeout( timer );
+                timer = setTimeout( function(){
+                    $('.item').css('height','auto')
+//                    $.fn.matchHeight._update(true)
+                }, 1000 );
+            });
+            break;
+
+        case 'uninoco-products':
+            $('.item').matchHeight();
+            break;
+
+        case 'bright-products':
+            $('.item').matchHeight();
+            break;
+
+        case 'others-products':
+            $('.item').matchHeight();
+            break;
+
+        case 'cafe-menu':
+            $('.menu-set').matchHeight();
+            break;
+
+    }
+
+});
+
